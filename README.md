@@ -21,7 +21,7 @@ Obten la última versión de FacturoPorTi PHP en:
 
     git clone https://github.com/facturoporti/factura-electronica-php
 
-Para iniciar debes de descargar y agregar a tu proyecto alguno de los siguientes archivos que contiene el ejemplo en JSON integran todo lo necesario para generar un CFDI solamente debe de actualizarse la **fecha de creacion** que viene en el JSON:
+Para iniciar debes de descargar y agregar a tu proyecto alguno de los siguientes archivos que contiene el ejemplo en JSON que integran todo lo necesario para generar un CFDI solamente debe de actualizarse la **fecha de creacion** que viene en el JSON:
 
     http://software.facturoporti.com.mx/TaaS/Factura.json
     http://software.facturoporti.com.mx/TaaS/ComplementoPagos.json
