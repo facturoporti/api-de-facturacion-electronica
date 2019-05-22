@@ -3,7 +3,7 @@
 
 ![banner](GitHub.png)
 
-# FacturoPorTi PHP v.2.3.7
+# Ejemplo de código en PHP para consumir el Rest API
 
 ![php badge](subtitulo-badge.png)
 
@@ -87,11 +87,11 @@ echo '</script>';
 
 ## Documentación 
 
-Si deseas agregar o eliminar información descarga el diccionario de datos que contiene todos los atributos y su descripción de los valores que permite http://software.facturoporti.com.mx/TaaS/Diccionario\Rest-Api-V-2.3.7.xlsx
+Si deseas agregar o eliminar información descarga el diccionario de datos que contiene todos los atributos y su descripción de los valores que permite http://software.facturoporti.com.mx/TaaS/Diccionario/Rest-Api-V-2.3.7.xlsx
 
 ## Probar Generación de CFDI's
 
-Abre la pagina en PHP y automáticamente se generará el CFDI utilizando el Rest API arroj, al término obtendras un Json de respuesta: 
+Abre la pagina en PHP y automáticamente se generará el CFDI utilizando el Rest API, al término obtendras un objeto Json de respuesta: 
 
 ```php
 {
