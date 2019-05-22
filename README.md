@@ -1,7 +1,7 @@
 
 <div align="center">
 
-![banner](Reducido.png)
+![banner](GitHub.png)
 
 # FacturoPorTi PHP v.2.3.7
 
