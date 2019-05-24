@@ -22,7 +22,7 @@ PHP 7 en adelante, se recomienda usar la última versión de PHP.
 
 Obten la última versión de FacturoPorTi PHP en:
 
-    git clone https://github.com/facturoporti/factura-electronica-php
+    git clone https://github.com/facturoporti/factura-electronica-rest-api-php.git
 
 Para iniciar debes de descargar y agregar a tu proyecto alguno de los siguientes archivos que contiene el ejemplo en JSON que integra todo lo necesario para generar un CFDI solamente deberá de actualizarse la **fecha de creación** que esta en el JSON:
 
@@ -227,7 +227,7 @@ Si deseas agregar o eliminar información descarga el **diccionario de datos** q
 
 2. Clona el repositorio
 
-    git clone git@github.com:yourUserName/factura-electronica-php.git
+    git clone git@github.com:yourUserName/factura-electronica-rest-api-php.git
 
 
 3. Crea una rama 
