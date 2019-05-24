@@ -1,15 +1,16 @@
-
 <div align="center">
 
 ![banner](GitHub.png)
 
-# Ejemplo de código en PHP para consumir el Rest API
+# Código en PHP del servicio Rest API para Timbrar y Cancelar
 
 ![php badge](subtitulo-badge.png)
 
 </div>
 
-Este es el ejemplo de uso para consumir el servicio REST API en PHP que permite generar el CFDI, PDF y envío por correo usando un JSON [FacturoPorTi API](http://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiCFDI).
+Este es el ejemplo de uso para consumir el servicio **Rest API en PHP  para generar Facturas, Notas, Recibos, Nómina, Carta Porte, Complemento de Pagos, etc)**, te devuelve la **versión impresa en PDF** adicionalmente podrás **enviar por correo el CFDI**, todo esto usando  como datos de entrada una cadena en formato JSON.
+
+Además el servicio Rest Api permitirá **cancelar uno o varios CFDI**
 
 ## Requerimientos
 
@@ -21,27 +22,35 @@ Obten la última versión de FacturoPorTi PHP en:
 
     git clone https://github.com/facturoporti/factura-electronica-php
 
-Para iniciar debes de descargar y agregar a tu proyecto alguno de los siguientes archivos que contiene el ejemplo en JSON que integran todo lo necesario para generar un CFDI solamente debe de actualizarse la **fecha de creacion** que viene en el JSON:
+Para iniciar debes de descargar y agregar a tu proyecto alguno de los siguientes archivos que contiene el ejemplo en JSON que integra todo lo necesario para generar un CFDI solamente deberá de actualizarse la **fecha de creación** que esta en el JSON:
 
-    http://software.facturoporti.com.mx/TaaS/Factura.json
-    http://software.facturoporti.com.mx/TaaS/ComplementoPagos.json
-    http://software.facturoporti.com.mx/TaaS/CartaPorte.json  
-    http://software.facturoporti.com.mx/TaaS/NotaCargo.json
-    http://software.facturoporti.com.mx/TaaS/NotaCredito.json
-    http://software.facturoporti.com.mx/TaaS/ReciboHonorarios.json
-    http://software.facturoporti.com.mx/TaaS/ReciboArrendamiento.json
-    http://software.facturoporti.com.mx/TaaS/ReciboDonativo.json
+    http:/software.facturoporti.com.mx/TaaS/Json/Factura.json
+    http:/software.facturoporti.com.mx/TaaS/Json/ComplementoPagos.json
+    http:/software.facturoporti.com.mx/TaaS/Json/CartaPorte.json  
+    http:/software.facturoporti.com.mx/TaaS/Json/NotaCargo.json
+    http:/software.facturoporti.com.mx/TaaS/Json/NotaCredito.json
+    http:/software.facturoporti.com.mx/TaaS/Json/ReciboHonorarios.json
+    http:/software.facturoporti.com.mx/TaaS/Json/ReciboArrendamiento.json
+    http:/software.facturoporti.com.mx/TaaS/Json/ReciboDonativo.json
+    http:/software.facturoporti.com.mx/TaaS/Json/Cancelar.json
 
-## Uso
+## Timbrar
+
+Descarga el repositorio que contiene los archivos necesarios para realizar el proceso de timbrado, en caso de ser necesario podrás actualizar los archivos de entrada en formato Json que se en listan en la parte de arriba. 
+
+Para el caso del timbrado será necesario que el archivo que selecciones le **actualices la fecha** al atributo Fecha que esta dentro del Json el valor debe de ser la **fecha actual o menor a 72 horas** si no lo haces marcara error de validación y no se timbrá el archivo.
 
 ```php
+
+<?php
+
 class CurlRequest
 {
     public function sendPost($data)
     {
         //url contra la que atacamos
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "http://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiCFDI");
+        curl_setopt($ch, CURLOPT_URL, "http://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI");
         //a true, obtendremos una respuesta de la url, en otro caso,
         //true si es correcto, false si no lo es
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -60,38 +69,31 @@ class CurlRequest
         }else{
             return $response;
         }
-    }
 }
 
 // Este ejemplo predeterminado es para generar una factura, se debe de actualizar la fecha que trae por defecto en Fecha de Creacion a una actual respetando el formato
-$json = json_decode(file_get_contents("http://software.facturoporti.com.mx/TaaS/Factura.json"), true);
+$json = json_decode(file_get_contents('http://software.facturoporti.com.mx/TaaS/Json/Factura.json'), true);
 
 $rest = new CurlRequest();
-
 $resultado = $rest ->sendPost($json);
 $respuesta = json_decode($resultado, true);
-
 echo ("Codigo: " . $respuesta["Estatus"]["Codigo"] . "\n");   
 echo ("Descripcion: " . $respuesta["Estatus"]["Descripcion"]. "\n"); 
 echo ("Fecha: " . $respuesta["Estatus"]["Fecha"] . "\n"); 
 echo ("InformacionTecnica: " . $respuesta["Estatus"]["InformacionTecnica"] . "\n");  
-
 // Se envía el CFDI con todos sus atributos
 $timbre = base64_decode($respuesta["CFDITimbrado"]["Respuesta"]["TimbreXML"]);
-
 echo '<script language="javascript">';
 echo "alert('". $timbre . "')";
 echo '</script>';
 
+?>
+
 ```
 
-## Documentación 
+## Probar Timbrado CFDI
 
-Si deseas agregar o eliminar información descarga el diccionario de datos que contiene todos los atributos y su descripción de los valores que permite http://software.facturoporti.com.mx/TaaS/Diccionario/Rest-Api-V-2.3.7.xlsx
-
-## Probar Generación de CFDI's
-
-Abre la pagina en PHP y automáticamente se generará el CFDI utilizando el Rest API, al término obtendras un objeto Json de respuesta: 
+Abre la página **RestApiTimbrado.php** automáticamente se generará el CFDI utilizando el servicio Rest API, al término obtendrás un objeto Json de respuesta: 
 
 ```php
 {
@@ -122,11 +124,100 @@ Abre la pagina en PHP y automáticamente se generará el CFDI utilizando el Rest
 }
 ```
 
+Los atributos ** CFDIXML, TimbreXML y PDF estan en Base64 ** se deberán de convertir a texto para obtener el XML y/o timbre del CFDI, en el caso del PDF lo podrán guardar o convertir de manera binaria para obtener la representación impresa.
+
 Versión de PHP usada
 
 ```
 PHP 7.3.5 
 ```
+
+
+## Cancelar
+
+Cuando se va a cancelar uno o varios CFDI se debe de actualizar los valores del Json como RFC, usuario, password, certificado PFX, etc. 
+
+```php
+
+<?php
+
+class CurlRequest
+{
+    public function sendPost($data)
+    {
+        //url contra la que atacamos
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "http://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiCancelarCFDI");
+        //a true, obtendremos una respuesta de la url, en otro caso,
+        //true si es correcto, false si no lo es
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        // Se define el tipo de metodo de envio de datos
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json'));
+        //establecemos el verbo http que queremos utilizar para la petición
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        //enviamos el array data
+        curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($data));
+        //obtenemos la respuesta
+        $response = curl_exec($ch);
+        // Se cierra el recurso CURL y se liberan los recursos del sistema
+        curl_close($ch);
+        if(!$response) {
+            return false;
+        }else{
+            return $response;
+        }
+    }
+}
+
+// Se debe de revisar el archivo Json para cambiar los valores como RFC, usuario, password, certificado en formato PFX, etc.
+
+$json = json_decode(file_get_contents('http://software.facturoporti.com.mx/TaaS/Json/Cancelar.json'), true);
+
+$rest = new CurlRequest();
+$resultado = $rest ->sendPost($json);
+
+//Imprime el acuse de recibido y los mensajes de la cancelación
+//El usuario deberá de programar su aplicacion para guardar estos valores 
+
+print json_encode($resultado);
+
+?>
+
+```
+
+## Probar Cancelación de CFDI
+
+Abre la página **RestApiCancelacion.php** automáticamente se descargará el Json predeterminado que llamará el servicio de cancelacion. Este archivo deberás de actualizarlo con tus datos al término obtendrás un objeto Json de respuesta: 
+
+```json
+ {
+  "Estatus": {
+    "Codigo": null,
+    "Descripcion": null,
+    "DetieneEjecucionProveedor": false,
+    "Fecha": null,
+    "InformacionTecnica": null
+  },
+  "FoliosRespuesta": [
+    {
+      "Estatus": {
+        "Codigo": "000",
+        "Descripcion": "Se envió con éxito el CFDI para ser cancelado en el SAT recuerde que debe de esperar de 24 a 72 horas para que el SAT refleje los cambios",
+        "DetieneEjecucionProveedor": false,
+        "Fecha": "2019-05-24T00:16:56",
+        "InformacionTecnica": null
+      },
+      "UUID": "D59C1F53-C70F-40C9-8B03-3C729B4416F6"
+    }
+  ]
+}
+```
+
+## Documentación Adicional
+
+Si deseas agregar o eliminar información descarga el **diccionario de datos** que contiene todos los atributos y su descripción de los valores que se permiten http://software.facturoporti.com.mx/TaaS/Diccionario/Rest-Api-V-2.3.7.xlsx
+
+
 
 ## Contribuir
 
@@ -159,3 +250,4 @@ PHP 7.3.5
 ## License
 
 Desarrollado en México por [FacturoPorTi](https://www.FacturoPorTi.com). Available with [MIT License](LICENSE).
+****
