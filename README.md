@@ -52,6 +52,7 @@ class CurlRequest
     {
         //url contra la que atacamos
         $ch = curl_init();
+        //URL de Produccion http://wcf.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI
         curl_setopt($ch, CURLOPT_URL, "http://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI");
         //a true, obtendremos una respuesta de la url, en otro caso,
         //true si es correcto, false si no lo es
