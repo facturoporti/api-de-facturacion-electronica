@@ -252,6 +252,6 @@ Si deseas agregar o eliminar información descarga el **diccionario de datos** q
 
 ## License
 
-Desarrollado en México por [FacturoPorTi](https://www.FacturoPorTi.com.mx). Licencia de uso [Ver mas](https://github.com/facturoporti/factura-electronica-rest-api-php/edit/master/Licencia).
+Desarrollado en México por [FacturoPorTi](https://www.FacturoPorTi.com.mx). Licencia de uso [Ver mas](https://github.com/facturoporti/factura-electronica-rest-api-php/blob/master/LICENSE).
 
 ****
