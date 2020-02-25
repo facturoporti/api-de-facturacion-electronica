@@ -53,7 +53,7 @@ class CurlRequest
         //url contra la que atacamos
         $ch = curl_init();
         //URL de Produccion http://wcf.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI
-        curl_setopt($ch, CURLOPT_URL, "http://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI");
+        curl_setopt($ch, CURLOPT_URL, "https://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI");
         //a true, obtendremos una respuesta de la url, en otro caso,
         //true si es correcto, false si no lo es
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -75,7 +75,7 @@ class CurlRequest
 }
 
 // Este ejemplo predeterminado es para generar una factura, se debe de actualizar la fecha que trae por defecto en Fecha de Creacion a una actual respetando el formato
-$json = json_decode(file_get_contents('http://software.facturoporti.com.mx/TaaS/Json/Factura.json'), true);
+$json = json_decode(file_get_contents('https://software.facturoporti.com.mx/TaaS/Json/Factura.json'), true);
 
 $rest = new CurlRequest();
 $resultado = $rest ->sendPost($json);
@@ -127,7 +127,7 @@ Abre la página **RestApiTimbrado.php** automáticamente se generará el CFDI ut
 }
 ```
 
-Los atributos ** CFDIXML, TimbreXML y PDF estan en Base64 ** se deberán de convertir a texto para obtener el XML y/o timbre del CFDI, en el caso del PDF lo podrán guardar o convertir de manera binaria para obtener la representación impresa.
+Los atributos **CFDIXML, TimbreXML y PDF estan en Base64** se deberán de convertir a texto para obtener el XML y/o timbre del CFDI, en el caso del PDF lo podrán guardar o convertir de manera binaria para obtener la representación impresa.
 
 Versión de PHP usada
 
@@ -150,7 +150,7 @@ class CurlRequest
     {
         //url contra la que atacamos
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "http://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiCancelarCFDI");
+        curl_setopt($ch, CURLOPT_URL, "https://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiCancelarCFDI");
         //a true, obtendremos una respuesta de la url, en otro caso,
         //true si es correcto, false si no lo es
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
