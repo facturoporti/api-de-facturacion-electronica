@@ -26,15 +26,15 @@ Obten la última versión de FacturoPorTi PHP en:
 
 Para iniciar debes de descargar y agregar a tu proyecto alguno de los siguientes archivos que contiene el ejemplo en JSON que integra todo lo necesario para generar un CFDI solamente deberá de actualizarse la **fecha de creación** que esta en el JSON:
 
-    http:/software.facturoporti.com.mx/TaaS/Json/Factura.json
-    http:/software.facturoporti.com.mx/TaaS/Json/ComplementoPagos.json
-    http:/software.facturoporti.com.mx/TaaS/Json/CartaPorte.json  
-    http:/software.facturoporti.com.mx/TaaS/Json/NotaCargo.json
-    http:/software.facturoporti.com.mx/TaaS/Json/NotaCredito.json
-    http:/software.facturoporti.com.mx/TaaS/Json/ReciboHonorarios.json
-    http:/software.facturoporti.com.mx/TaaS/Json/ReciboArrendamiento.json
-    http:/software.facturoporti.com.mx/TaaS/Json/ReciboDonativo.json
-    http:/software.facturoporti.com.mx/TaaS/Json/Cancelar.json
+    https:/software.facturoporti.com.mx/TaaS/Json/Factura.json
+    https:/software.facturoporti.com.mx/TaaS/Json/ComplementoPagos.json
+    https:/software.facturoporti.com.mx/TaaS/Json/CartaPorte.json  
+    https:/software.facturoporti.com.mx/TaaS/Json/NotaCargo.json
+    https:/software.facturoporti.com.mx/TaaS/Json/NotaCredito.json
+    https:/software.facturoporti.com.mx/TaaS/Json/ReciboHonorarios.json
+    https:/software.facturoporti.com.mx/TaaS/Json/ReciboArrendamiento.json
+    https:/software.facturoporti.com.mx/TaaS/Json/ReciboDonativo.json
+    https:/software.facturoporti.com.mx/TaaS/Json/Cancelar.json
 
 ## Timbrar
 
@@ -52,7 +52,7 @@ class CurlRequest
     {
         //url contra la que atacamos
         $ch = curl_init();
-        //URL de Produccion http://wcf.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI
+        //URL de Produccion https://wcf.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI
         curl_setopt($ch, CURLOPT_URL, "https://wcfpruebas.facturoporti.com.mx/Timbrado/Servicios.svc/ApiTimbrarCFDI");
         //a true, obtendremos una respuesta de la url, en otro caso,
         //true si es correcto, false si no lo es
@@ -174,7 +174,7 @@ class CurlRequest
 
 // Se debe de revisar el archivo Json para cambiar los valores como RFC, usuario, password, certificado en formato PFX, etc.
 
-$json = json_decode(file_get_contents('http://software.facturoporti.com.mx/TaaS/Json/Cancelar.json'), true);
+$json = json_decode(file_get_contents('https://software.facturoporti.com.mx/TaaS/Json/Cancelar.json'), true);
 
 $rest = new CurlRequest();
 $resultado = $rest ->sendPost($json);
@@ -218,7 +218,7 @@ Abre la página **RestApiCancelacion.php** automáticamente se descargará el Js
 
 ## Documentación Adicional
 
-Si deseas agregar o eliminar información descarga el **diccionario de datos** que contiene todos los atributos y su descripción de los valores que se permiten http://software.facturoporti.com.mx/TaaS/Diccionario/Rest-Api-V-2.3.7.xlsx
+Si deseas agregar o eliminar información descarga el **diccionario de datos** que contiene todos los atributos y su descripción de los valores que se permiten https://software.facturoporti.com.mx/TaaS/Diccionario/Rest-Api-V-2.3.7.xlsx
 
 
 
