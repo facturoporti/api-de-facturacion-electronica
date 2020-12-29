@@ -27,7 +27,7 @@ class CurlRequest
     }
 }
 
-$json = json_decode(file_get_contents('http://software.facturoporti.com.mx/TaaS/Json/Cancelar.json'), true);
+$json = json_decode(file_get_contents('https://software.facturoporti.com.mx/TaaS/Json/Cancelar.json'), true);
 
 $rest = new CurlRequest();
 $resultado = $rest ->sendPost($json);
