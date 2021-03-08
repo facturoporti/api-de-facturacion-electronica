@@ -8,6 +8,35 @@
 
 </div>
 
+## Actualizacion importante de nueva API 1 de abril 2021
+
+**Estos servicios dejarán de estar disponible a partir del 1 de abril del 2021**, la nueva versión de la api tiene estos y mas herramientas que te facilitarán y ahorran mucho tiempo en validaciones o penalizaciones del sat en auditorías, te recomendamos ampliamente revisar la nueva documentación en https://developers.facturoporti.com.mx/reference/api-desarrollo-facturoporti como parte de las nuevas características podrás:
+
+- Puedes realizar consultas o descargas de los catálogos del sat actualizados.
+- Timbra cualquier tipo de cfdi con json o xml
+- Valida códigos postales y direcciones
+- Cancela cfdi
+- Consulta cfdi relacionados
+- Consulta el estatus del cfdi
+- Consulta las solicitudes pendientes de cancelaciones
+- Valida exhaustivamente el cfdi (estructura, integridad, vigencia, fecha de emisión del cfdi, fecha de validez del certificado al momento de emisión, sello, matriz de errores del SAT, estatus en el sat, etc).
+- Valida las listas negras del sat: efos, edos, no localizados.
+- Valida certificados digitales o fiel
+- Valida los rfc para verificar si pueden emitir o recibir cfdi
+- Recepción de documentos
+- Tiene muchas opciones mas y continuamente se integran nuevas funcionalidades.
+
+**Los nuevos servicios de acceso a la api están publicados en:**
+
+    https://testapi.facturoporti.com.mx/
+    https://api.facturoporti.com.mx/
+
+Dependiendo del entorno en que estés debes de utilizar sandbox o producción.
+
+**¿Necesitas ayuda o requieres contratar los servicios?** Envíanos un email a soporte@facturoporti.com.mx ventas@facturoporti.com.mx, dirígete a la página https://www.facturoporti.com.mx platica con nosotros en línea o llámanos a los teléfonos 555 546 2288 o al 558 421 7675 con mucho gusto podremos darte lo que necesitas. 
+
+## Introducción 
+
 Este es el ejemplo de uso para consumir el servicio **Rest API en PHP  para generar Facturas, Notas, Recibos, Nómina, Carta Porte, Complemento de Pagos, etc)**, te devuelve la **versión impresa en PDF** adicionalmente podrás **enviar por correo el CFDI**, todo esto usando  como datos de entrada una cadena en formato JSON. 
 
 Este servicio es ideal para usarlo en aplicaciones móviles y/o software que implemente llamadas tipo Rest, el usuario no necesita saber ninguna regla del SAT ni programar la generación del XML de acuerdo al anexo 20, nosotros realizamos todo esto facilitando el proceso de integración de tu sistema y/o aplicación para cumplir con lo que solicita el SAT.
