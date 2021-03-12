@@ -8,7 +8,7 @@
 
 </div>
 
-## Actualizacion importante de nueva API 1 de abril 2021
+## Actualizacion importante
 
 Nueva versión de Api, la documentación completa contiene herramientas que te facilitarán y ahorran mucho tiempo en validaciones o penalizaciones del sat en auditorías, diríjete a https://developers.facturoporti.com.mx/reference/api-desarrollo-facturoporti como parte de las características podrás:
 
