@@ -10,7 +10,7 @@
 
 ## Actualizacion importante
 
-Nueva versión de Api, la documentación completa contiene herramientas que te facilitarán y ahorran mucho tiempo en validaciones o penalizaciones del sat en auditorías, diríjete a https://developers.facturoporti.com.mx/reference/api-desarrollo-facturoporti como parte de las características podrás:
+Nueva versión de Api, la documentación completa contiene herramientas que te facilitarán y ahorran mucho tiempo en validaciones o penalizaciones del sat en auditorías, diríjete a https://developers.facturoporti.com.mx/reference/api-facturacion-electronica como parte de las características podrás:
 
 - Realizar consultas o descargas de los catálogos del sat actualizados.
 - Timbra cualquier tipo de cfdi con json o xml
