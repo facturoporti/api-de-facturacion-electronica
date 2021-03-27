@@ -33,7 +33,7 @@ Este servicios son ideales para usarlo en aplicaciones móviles y/o software que
 
 ## Generador de código fuente
 
-En cada servicio encontraras una herramienta que generará el código de programación necesario para que lo integres en tu propia aplicación. Tenemos muchos lenguajes soportados como: **cURL, PHP, Java, C#, Javascript, Python, Ruby, etc.** Te dejamos algunos ejemplos de lo que hace nuestro generador de código de programación, para que veas que fácil es usar los servicios. Diríjete a https://developers.facturoporti.com.mx/reference/api-desarrollo-facturoporti 
+En cada servicio encontraras una herramienta que generará el código de programación necesario para que lo integres en tu propia aplicación. Tenemos muchos lenguajes soportados como: **cURL, PHP, Java, C#, Javascript, Python, Ruby, etc.** Te dejamos algunos ejemplos de lo que hace nuestro generador de código de programación, para que veas que fácil es usar los servicios. Diríjete a https://developers.facturoporti.com.mx/reference/facturacion-electronica-codigo-fuente 
 
 ![C# badge](cURL.PNG)
 ![C# badge](Php.PNG)
@@ -52,7 +52,7 @@ Una vez descargado ambos abre Postman e importar el proyecto
 ![C# badge](Foldder.PNG)
 ![C# badge](importado.png)
 
-La documentación completa esta en https://developers.facturoporti.com.mx/reference/api-desarrollo-facturoporti 
+La documentación completa esta en https://developers.facturoporti.com.mx/reference/api-facturacion-electronica
 
 ## Ejemplos de cfdi
 
@@ -81,7 +81,7 @@ Para generar recibos de nomina:
 
 ## Precios
 
-**¿Necesitas ayuda o requieres contratar los servicios?** Envíanos un email a soporte@facturoporti.com.mx ventas@facturoporti.com.mx, dirígete a la página https://www.facturoporti.com.mx platica con nosotros en línea o llámanos a los teléfonos 555 546 2288 o al 558 421 7675 con mucho gusto podremos darte lo que necesitas. 
+**¿Necesitas ayuda o requieres contratar los servicios?** Envíanos un email a soporte@facturoporti.com.mx ventas@facturoporti.com.mx, dirígete a la página https://www.facturoporti.com.mx/api-de-facturacion-electronica/ platica con nosotros en línea o llámanos a los teléfonos 555 546 2288 o al 558 421 7675 con mucho gusto podremos darte lo que necesitas. 
 
 ## License
 
