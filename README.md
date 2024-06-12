@@ -2,38 +2,39 @@
 
 ![banner](GitHub.png)
 
-# Código para llamadas a servicios de Rest API
+# API de Facturación Electrónica
 
 ![php badge](subtitulo-badge.png)
 
 </div>
 
-## Actualizacion importante
+## Timbrado de facturas electrónicas usando nuestra API
 
-Nueva versión de Api, la documentación completa contiene herramientas que te facilitarán y ahorran mucho tiempo en validaciones o penalizaciones del sat en auditorías, diríjete a https://developers.facturoporti.com.mx/reference/api-facturacion-electronica como parte de las características podrás:
 
-- Realizar consultas o descargas de los catálogos del sat actualizados.
-- Timbra cualquier tipo de cfdi con json o xml
-- Genera el PDF con logotipos, direcciones, etc.
-- Envía por correo los xml timbrados
-- Valida códigos postales y direcciones
-- Cancela cfdi
-- Consulta cfdi relacionados
-- Consulta el estatus del cfdi
-- Consulta las solicitudes pendientes de cancelaciones
-- Valida exhaustivamente el cfdi (estructura, integridad, vigencia, fecha de emisión del cfdi, fecha de validez del certificado al momento de emisión, sello, matriz de errores del SAT, estatus en el sat, etc).
-- Valida las listas negras del sat: efos, edos, no localizados.
-- Valida certificados digitales o fiel
-- Valida los rfc para verificar si pueden emitir o recibir cfdi
-- Recepción de documentos
-- Tiene muchas opciones mas y continuamente se integran nuevas funcionalidades.
+Consulta nuestra documentación completa contiene ejemplos json, proyecto en postman, generan el código fuente en cualquier lenguaje. Además, de  herramientas que te facilitarán y ahorran mucho tiempo. Diríjete a [API de Facturación electrónica](https://developers.facturoporti.com.mx/reference/api-facturacion-electronica) como parte de las características podrás:
+
+- #### Realizar consultas o descargas de los catálogos del sat actualizados.
+- #### Timbra cualquier tipo de cfdi con json o xml
+- #### Genera el PDF con logotipos, direcciones, etc.
+- #### Envía por correo los xml timbrados
+- #### Valida códigos postales y direcciones
+- #### Cancela cfdi
+- #### Consulta cfdi relacionados
+- #### Consulta el estatus del cfdi
+- #### Consulta las solicitudes pendientes de cancelaciones
+- #### Valida exhaustivamente el cfdi (estructura, integridad, vigencia, fecha de emisión del cfdi, fecha de validez del certificado al momento de emisión, sello, matriz de errores del SAT, estatus en el sat, etc).
+- #### Valida las listas negras del sat: efos, edos, no localizados.
+- #### Valida certificados digitales o fiel
+- #### Valida los rfc para verificar si pueden emitir o recibir cfdi
+- #### Recepción de documentos (Buzón electrónico)
+- #### Tiene muchas opciones mas y continuamente se integran nuevas funcionalidades.
 
 Este servicios son ideales para usarlo en aplicaciones móviles y/o software que implemente llamadas tipo Rest, el usuario no necesita saber ninguna regla del SAT ni programar la generación del XML de acuerdo al anexo 20, nosotros realizamos todo esto facilitando el proceso de integración de tu sistema y/o aplicación para cumplir con lo que solicita el SAT.
 
 
-## Generador de código fuente
+## Generador de código fuente con API de Facturación
 
-En cada servicio encontraras una herramienta que generará el código de programación necesario para que lo integres en tu propia aplicación. Tenemos muchos lenguajes soportados como: **cURL, PHP, Java, C#, Javascript, Python, Ruby, etc.** Te dejamos algunos ejemplos de lo que hace nuestro generador de código de programación, para que veas que fácil es usar los servicios. Diríjete a https://developers.facturoporti.com.mx/reference/facturacion-electronica-codigo-fuente 
+En cada servicio encontraras una herramienta que generará el código fuente de programación necesario para que lo integres en tu propia aplicación. Tenemos muchos lenguajes soportados como: **cURL, PHP, Java, C#, Javascript, Python, Ruby, etc.** Te dejamos algunos ejemplos de lo que hace nuestro generador de código de programación, para que veas que fácil es usar los servicios. Diríjete a [API Facturación](https://developers.facturoporti.com.mx/reference/facturacion-electronica-codigo-fuente) 
 
 ![C# badge](cURL.PNG)
 ![C# badge](Php.PNG)
@@ -42,17 +43,20 @@ En cada servicio encontraras una herramienta que generará el código de program
 ![C# badge](Javascript.PNG)
 ![C# badge](Python.PNG)
 
-## Recursos Postman
+## Descarga el Proyecto de Facturacion Electrónica para Postman
 
-Postman es una herramienta que tiene muchas opciones para probar servicios rest api es Postman con ella puedes probar o realizar adecuaciones a llamadas Json. Aquí esta el proyecto actualizado de todos los servicios disponibles. Descarga el proyecto que contiene los ejemplos: [https://software.facturoporti.com.mx/TaaS/Json/Api/FacturoPorTi-RestApi.zip](https://software.facturoporti.com.mx/TaaS/Json/Api/FacturoPorTi-RestApi.zip) e instala el programa  [https://www.postman.com/downloads/](https://www.postman.com/downloads/) 
+Postman es una herramienta que tiene muchas opciones para probar servicios rest api. Con ella puedes hacer pruebas en tiempo real. Utiliza el proyecto con todos los servicios disponibles: [Descargar Ejemplos Facturacion Electrónica](https://software.facturoporti.com.mx/TaaS/Json/Api/FacturoPorTi-RestApi.zip) e instala el programa  [https://www.postman.com/downloads/](https://www.postman.com/downloads/) 
 
-Una vez descargado ambos abre Postman e importar el proyecto
+Una vez descargado ambos abre Postman e importa el proyecto
 
 ![C# badge](Importar.PNG)
 ![C# badge](Foldder.PNG)
 ![C# badge](importado.png)
 
-La documentación completa esta en https://developers.facturoporti.com.mx/reference/api-facturacion-electronica
+ 
+### api para facturacion electronica 
+Lee la documentación de la 
+[api facturacion](https://developers.facturoporti.com.mx/reference/api-facturacion-electronica)
 
 ## Ejemplos de cfdi
 
@@ -81,9 +85,9 @@ Para generar recibos de nomina:
 
 ## Precios
 
-**¿Necesitas ayuda o requieres contratar los servicios?** Envíanos un email a soporte@facturoporti.com.mx ventas@facturoporti.com.mx, dirígete a la página https://www.facturoporti.com.mx/api-de-facturacion-electronica/ platica con nosotros en línea o llámanos a los teléfonos 555 546 2288 o al 558 421 7675 con mucho gusto podremos darte lo que necesitas. 
+**¿Necesitas ayuda o requieres contratar los servicios?** Envíanos un email a soporte@facturoporti.com.mx vendedores@facturoporti.com.mx, dirígete a la página https://www.facturoporti.com.mx/api-de-facturacion-electronica/ platica con nosotros en línea o llámanos a los teléfonos 55 9506 8725 con mucho gusto podremos darte lo que necesitas. 
 
 ## License
 
-Desarrollado en México por [FacturoPorTi](https://www.FacturoPorTi.com.mx). [Licencia de uso](https://github.com/facturoporti/factura-electronica-rest-api-C-Sharp/blob/master/Licencia).
+Desarrollado en México por [FacturoPorTi](https://www.FacturoPorTi.com.mx). [Licencia de uso](https://github.com/facturoporti/api-de-facturacion-electronica/blob/master/LICENSE).
 ****
