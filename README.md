@@ -37,11 +37,6 @@ Este servicios son ideales para usarlo en aplicaciones móviles y/o software que
 En cada servicio encontraras una herramienta que generará el código fuente de programación necesario para que lo integres en tu propia aplicación. Tenemos muchos lenguajes soportados como: **cURL, PHP, Java, C#, Javascript, Python, Ruby, etc.** Te dejamos algunos ejemplos de lo que hace nuestro generador de código de programación, para que veas que fácil es usar los servicios. Diríjete a [API Facturación](https://developers.facturoporti.com.mx/reference/facturacion-electronica-codigo-fuente) 
 
 ![C# badge](cURL.PNG)
-![C# badge](Php.PNG)
-![C# badge](Java.PNG)
-![C# badge](Csharp.PNG)
-![C# badge](Javascript.PNG)
-![C# badge](Python.PNG)
 
 ## Descarga el Proyecto de Facturacion Electrónica para Postman
 
